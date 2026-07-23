@@ -1,156 +1,349 @@
-# Terraform AWS Learning Journey 🚀
+# 🚀 Terraform AWS Learning Journey
 
-A beginner-friendly, hands-on journey learning **Terraform** on **AWS** — from
-absolute basics to production-grade infrastructure, through 25 real
-projects and plain-English notes anyone can follow.
 
-## 📌 About This Repo
+![GitHub last commit](https://img.shields.io/github/last-commit/raictl/Terraform-AWS-Learning-Journey?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/raictl/Terraform-AWS-Learning-Journey?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/raictl/Terraform-AWS-Learning-Journey?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/raictl/Terraform-AWS-Learning-Journey?style=for-the-badge)
 
-This repo is both my personal learning log **and** a free, open resource
-for anyone who wants to learn Terraform + AWS from scratch. Everything
-here is explained in simple language first — no assumed prior cloud or
-coding experience — then backed by real, working code you can run
-yourself.
+> A hands-on journey to master **Terraform** and **Amazon Web Services (AWS)** by building real-world Infrastructure as Code (IaC) projects from the ground up.
 
-**Goal:** Go from zero to production-ready IaC skills (state management,
-modules, remote backends, CI/CD, multi-environment setups) by actually
-building 25 real projects — not just copy-pasting code without
-understanding it.
-
-**New here?** Start with [`notes/00-terraform-basics.md`](notes/00-terraform-basics.md),
-then build [Project 1](project-01-static-website-s3/).
-
-## 📓 Notes — Terraform Explained Simply
-
-Plain-English concept notes (with everyday analogies, no jargon) written
-before diving into each project — anyone can follow along, even with zero
-prior experience: **[notes/](notes/)**
-
-## 🗺️ Project Roadmap (Basics → Expert)
-
-Learning Terraform + AWS by building 25 progressively harder projects — from a single S3 bucket to a production-grade, multi-account, multi-region setup.
-
-### 🟢 Level 1: Beginner — Core Concepts (Project 1-6)
-| # | Project | Key Concepts | Status |
-|---|---|---|---|
-| 1 | Static Website on S3 | Providers, resources, `init/plan/apply` | 🔲 |
-| 2 | S3 Bucket with Versioning & Lifecycle Rules | Resource arguments, tags | 🔲 |
-| 3 | EC2 Instance with Key Pair | Variables, outputs | 🔲 |
-| 4 | Security Group + EC2 (Web Server) | Data sources, dependencies | 🔲 |
-| 5 | IAM User, Group & Policy Setup | IAM resources, least privilege | 🔲 |
-| 6 | Remote State with S3 Backend + DynamoDB Lock | State management, locking | 🔲 |
-
-### 🟡 Level 2: Intermediate — Real Infrastructure (Project 7-13)
-| # | Project | Key Concepts | Status |
-|---|---|---|---|
-| 7 | Custom VPC with Public/Private Subnets | Networking, route tables, IGW | 🔲 |
-| 8 | NAT Gateway + Private EC2 Access | NAT, bastion host pattern | 🔲 |
-| 9 | Application Load Balancer + Auto Scaling Group | ASG, target groups, health checks | 🔲 |
-| 10 | RDS (MySQL/Postgres) with Private Subnet | Databases, subnet groups, secrets | 🔲 |
-| 11 | Reusable VPC Module | Writing your own modules | 🔲 |
-| 12 | Multi-Environment Setup (dev/staging/prod) | Workspaces or dir-per-env pattern | 🔲 |
-| 13 | Terraform + `terraform.tfvars` per Environment | Variable files, `-var-file` | 🔲 |
-
-### 🟠 Level 3: Advanced — Serverless & Automation (Project 14-19)
-| # | Project | Key Concepts | Status |
-|---|---|---|---|
-| 14 | Lambda Function + API Gateway | Serverless, IAM roles for Lambda | 🔲 |
-| 15 | S3 → Lambda Trigger Pipeline | Event-driven architecture | 🔲 |
-| 16 | ECS Cluster with Fargate | Containers, task definitions | 🔲 |
-| 17 | EKS Cluster (basic) | Kubernetes on AWS via Terraform | 🔲 |
-| 18 | CI/CD Pipeline (GitHub Actions → Terraform Apply) | Automation, `plan` on PR, `apply` on merge | 🔲 |
-| 19 | Terraform Modules Published to a Private Registry | Module versioning, reuse | 🔲 |
-
-### 🔴 Level 4: Expert — Production-Grade (Project 20-25)
-| # | Project | Key Concepts | Status |
-|---|---|---|---|
-| 20 | Multi-Region Active-Passive Architecture | Provider aliases, cross-region | 🔲 |
-| 21 | Multi-Account Setup with AWS Organizations | Assume-role, account isolation | 🔲 |
-| 22 | Policy as Code with OPA / Sentinel | Governance, compliance guardrails | 🔲 |
-| 23 | Cost Estimation with Infracost in CI | Cost visibility before apply | 🔲 |
-| 24 | Automated Testing with Terratest | Unit/integration testing for IaC | 🔲 |
-| 25 | Full Production Capstone: 3-Tier App (VPC + ALB + ASG + RDS + CI/CD + Monitoring) | Everything combined | 🔲 |
-
-*(Status: 🔲 Not Started · 🔄 In Progress · ✅ Done — updated as I build each project)*
-
-## 📂 Repo Structure
-
-```
-Terraform-AWS-Learning-Journey/
-├── project-01-static-website-s3/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── README.md         # what I built + what I learned
-├── project-02-s3-versioning-lifecycle/
-│   ├── main.tf
-│   └── README.md
-├── ...
-├── project-25-capstone-3-tier-app/
-│   └── README.md
-└── README.md               # you are here
-```
-
-## 🛠️ Tech & Tools
-
-- **IaC:** Terraform
-- **Cloud:** AWS (EC2, VPC, S3, IAM, and more as the course progresses)
-- **Version Control:** Git & GitHub
-
-## ⚙️ Prerequisites
-
-To run any of the code in this repo yourself:
-
-- [Terraform CLI](https://developer.hashicorp.com/terraform/install) installed
-- AWS CLI installed and configured (`aws configure`) with a scoped IAM user
-- An AWS account (free tier is enough for most early lessons)
-
-## 💻 My Environment
-
-I practice across both Linux and Windows, so my setup is verified on both:
-
-| Tool | Linux | Windows |
-|---|---|---|
-| Terraform CLI | ✅ Installed & configured | ✅ Installed & configured |
-| AWS CLI | ✅ Installed & `aws configure` done | ✅ Installed & `aws configure` done |
-
-To verify your own setup is ready:
-
-```bash
-terraform -version
-aws --version
-aws sts get-caller-identity   # confirms AWS CLI is authenticated correctly
-```
-
-## ▶️ How to Run Any Day's Code
-
-```bash
-cd day01
-terraform init
-terraform plan
-terraform apply
-# ... explore the resource in the AWS Console ...
-terraform destroy
-```
-
-## 🧠 Key Learnings So Far
-
-*(This section grows as I go — one or two bullet points per major concept.)*
-
-- *(coming soon)*
-
-## 📖 Notes to Future Me
-
-*(Personal cheat-sheet of things that tripped me up — gotchas, error messages, fixes.)*
-
-- *(coming soon)*
-
-## 🔗 Resources
-
-- [Terraform Docs](https://developer.hashicorp.com/terraform/docs)
-- [AWS Provider Docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-- [Course repo I'm following](https://github.com/piyushsachdeva/Terraform-Full-Course-Aws)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform)
+![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=for-the-badge&logo=amazonaws)
+![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
-⭐ Following along or learning too? Feel free to fork this and track your own journey.
+# 📖 About This Repository
+
+Welcome to my **Terraform AWS Learning Journey**!
+
+This repository documents my hands-on learning experience with **Terraform** and **AWS**, focusing on Infrastructure as Code (IaC) and cloud automation.
+
+The goal is not only to learn Terraform syntax but also to understand **how production-ready AWS infrastructure is designed, deployed, and managed using Terraform**.
+
+Every topic in this repository includes practical examples, explanations, and real-world use cases to strengthen both theoretical and hands-on knowledge.
+
+---
+
+# 🎯 Objectives
+
+- Learn Infrastructure as Code (IaC)
+- Master Terraform fundamentals
+- Understand AWS core services
+- Build reusable Terraform modules
+- Learn Terraform state management
+- Deploy production-style AWS infrastructure
+- Follow Terraform and AWS best practices
+- Build a strong DevOps portfolio
+
+---
+
+# 🗂 Repository Structure
+
+```text
+Terraform-AWS-Learning-Journey/
+│
+├── README.md
+├── .gitignore
+├── LICENSE
+│
+├── 01-basics/
+│   ├── providers/
+│   ├── variables/
+│   ├── outputs/
+│   └── locals/
+│
+├── 02-aws/
+│   ├── ec2/
+│   ├── s3/
+│   ├── iam/
+│   ├── vpc/
+│   └── security-groups/
+│
+├── 03-modules/
+│
+├── 04-state-management/
+│
+├── 05-workspaces/
+│
+├── 06-remote-backend/
+│
+├── 07-projects/
+│   ├── static-website/
+│   ├── wordpress/
+│   └── three-tier-app/
+│
+├── modules/
+│
+└── docs/
+    ├── notes.md
+    ├── commands.md
+    └── architecture/
+```
+
+---
+
+# 🛣 Learning Roadmap
+
+## 📚 Phase 1 — Terraform Basics
+
+- [x] Repository Setup
+- [x] Terraform Installation
+- [ ] Terraform CLI
+- [ ] Providers
+- [ ] Resources
+- [ ] Variables
+- [ ] Outputs
+- [ ] Locals
+- [ ] Data Sources
+- [ ] Functions
+- [ ] Expressions
+
+---
+
+## ☁️ Phase 2 — AWS Resources
+
+- [ ] Configure AWS Provider
+- [ ] EC2 Instance
+- [ ] Security Groups
+- [ ] VPC
+- [ ] Subnets
+- [ ] Internet Gateway
+- [ ] Route Tables
+- [ ] NAT Gateway
+- [ ] Elastic IP
+- [ ] S3 Bucket
+- [ ] IAM Users & Roles
+
+---
+
+## 🧩 Phase 3 — Intermediate Terraform
+
+- [ ] Variable Validation
+- [ ] Local Values
+- [ ] Output Values
+- [ ] Count Meta-Argument
+- [ ] for_each
+- [ ] Dynamic Blocks
+- [ ] Conditional Expressions
+- [ ] Lifecycle Rules
+- [ ] Provisioners
+
+---
+
+## 📦 Phase 4 — Modules & State Management
+
+- [ ] Create Modules
+- [ ] Reusable Modules
+- [ ] Module Inputs & Outputs
+- [ ] Terraform State
+- [ ] Remote Backend (S3)
+- [ ] State Locking (DynamoDB)
+- [ ] Terraform Workspaces
+- [ ] Import Existing Resources
+
+---
+
+## 🚀 Phase 5 — Real-World Projects
+
+- [ ] Static Website Hosting
+- [ ] Custom VPC
+- [ ] Public & Private Subnets
+- [ ] Bastion Host
+- [ ] Application Load Balancer
+- [ ] Auto Scaling Group
+- [ ] WordPress Deployment
+- [ ] Three-Tier Architecture
+- [ ] CloudWatch Monitoring
+
+---
+
+# 🛠 Prerequisites
+
+Before running the examples, make sure you have:
+
+- Terraform installed
+- AWS CLI installed
+- Git installed
+- Visual Studio Code (Recommended)
+- An AWS Account
+- An IAM User with appropriate permissions
+- AWS CLI configured
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/raictl/Terraform-AWS-Learning-Journey.git
+```
+
+## 2. Navigate to the Project
+
+```bash
+cd Terraform-AWS-Learning-Journey
+```
+
+## 3. Initialize Terraform
+
+```bash
+terraform init
+```
+
+## 4. Validate Configuration
+
+```bash
+terraform validate
+```
+
+## 5. Preview Infrastructure
+
+```bash
+terraform plan
+```
+
+## 6. Deploy Infrastructure
+
+```bash
+terraform apply
+```
+
+## 7. Destroy Infrastructure
+
+```bash
+terraform destroy
+```
+
+---
+
+# 📚 Topics Covered
+
+- Terraform CLI
+- Providers
+- Resources
+- Variables
+- Outputs
+- Locals
+- Data Sources
+- Modules
+- Terraform State
+- Remote Backend
+- Workspaces
+- AWS EC2
+- AWS VPC
+- AWS IAM
+- AWS S3
+- Security Groups
+- Route Tables
+- Internet Gateway
+- NAT Gateway
+- Best Practices
+
+---
+
+# 📂 Documentation
+
+Additional notes and learning resources are available in the **docs/** directory.
+
+Topics include:
+
+- Terraform Notes
+- AWS Notes
+- Common Commands
+- Best Practices
+- Architecture Diagrams
+- Troubleshooting Tips
+
+---
+
+# 💡 Best Practices Followed
+
+- Clean folder structure
+- Reusable Terraform modules
+- Version pinning
+- Resource tagging
+- Consistent formatting
+- Descriptive variable names
+- Documentation for every example
+- Incremental Git commits
+- Learning-focused organization
+
+---
+
+# ⚠️ Important Notes
+
+This repository is intended for learning purposes.
+
+Some Terraform examples may provision billable AWS resources.
+
+Always remember to destroy resources after testing to avoid unnecessary AWS charges.
+
+```bash
+terraform destroy
+```
+
+---
+
+# 🤝 Contributing
+
+Suggestions, improvements, and discussions are welcome!
+
+If you have ideas to improve this repository, feel free to:
+
+- Open an Issue
+- Submit a Pull Request
+- Share best practices
+
+---
+
+# 📈 Repository Progress
+
+| Section | Status |
+|----------|--------|
+| Repository Setup | ✅ Completed |
+| Terraform Basics | 🚧 In Progress |
+| AWS Resources | ⏳ Planned |
+| Modules | ⏳ Planned |
+| State Management | ⏳ Planned |
+| Real Projects | ⏳ Planned |
+
+---
+
+# 📚 Learning Resources
+
+- Terraform Official Documentation
+- AWS Documentation
+- Terraform Registry
+- AWS Well-Architected Framework
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ Support
+
+If you find this repository useful, please consider giving it a **⭐ Star**.
+
+It motivates me to continue documenting my learning journey and sharing practical Terraform + AWS examples with the community.
+
+---
+
+## 👨‍💻 Author
+
+**Prayagraj**
+
+Learning • Building • Automating • Sharing
+
+> *"The best way to learn Infrastructure as Code is by building real infrastructure."*
+
+---
+
+**Happy Learning! 🚀**
