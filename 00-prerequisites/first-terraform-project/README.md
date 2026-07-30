@@ -74,36 +74,6 @@ AWS API
 
 Amazon S3 Bucket
 
-```
-
----
-
-# 📂 Project Structure
-
-```
-
-terraform-first-project/
-
-├── provider.tf
-
-├── versions.tf
-
-├── variables.tf
-
-├── terraform.tfvars
-
-├── main.tf
-
-├── outputs.tf
-
-├── README.md
-
-└── .gitignore
-
-```
-
----
-
 # 📁 Understanding Every File
 
 Terraform projects are generally divided into multiple files.
@@ -2405,31 +2375,6 @@ Show Differences
 ✔ Review every execution plan.
 
 ---
-
-# Git Best Practices
-
-Commit
-
-✔ .tf files
-
-✔ README.md
-
-✔ .gitignore
-
-✔ Documentation
-
-Do NOT Commit
-
-❌ .terraform/
-
-❌ terraform.tfstate
-
-❌ terraform.tfstate.backup
-
-❌ crash.log
-
----
-
 # Common Errors
 
 ## Bucket Already Exists
