@@ -223,28 +223,6 @@ These fundamentals form the foundation for advanced Terraform topics such as var
 
 ---
 
-# 🚀 Next Chapter
-
-➡️ **Chapter 02 – Terraform Language (HCL)**
-
-Upcoming topics include:
-
-- HCL Syntax
-- Blocks
-- Arguments
-- Expressions
-- Variables
-- Data Types
-- Locals
-- Outputs
-- Functions
-- Meta Arguments
-- Dynamic Blocks
-- For Expressions
-- Conditional Expressions
-
----
-
 ## 🤝 Contributing
 
 Found an issue or have an improvement?
