@@ -1,0 +1,6 @@
+Terraform Project Information
+=============================
+
+Project Name: Terraform Learning Journey
+Environment: Development
+Owner: Terraform Student
