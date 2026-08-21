@@ -1,0 +1,6 @@
+Terraform Project Information
+=============================
+
+Project Name: Terraform Portfolio
+Environment: development
+Owner: Ashutosh Rai
