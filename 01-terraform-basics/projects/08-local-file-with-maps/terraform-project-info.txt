@@ -1,0 +1,14 @@
+Terraform Project Information
+=============================
+
+Project Name: Terraform Portfolio
+
+Project Settings
+----------------
+
+Environment: development
+Owner: DevOps Student
+Department: Engineering
+Application: Terraform Learning
+
+Total Settings: 4
