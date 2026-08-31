@@ -1,0 +1,9 @@
+Terraform Environment Report
+=============================
+
+Project Name: Terraform Portfolio
+Environment: staging
+
+Environment Level: MEDIUM
+Backup Required: NO
+Monitoring Level: BUSINESS_HOURS
