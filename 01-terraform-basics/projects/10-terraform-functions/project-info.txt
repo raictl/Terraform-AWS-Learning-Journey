@@ -1,0 +1,26 @@
+Terraform Project Information
+==============================
+
+Project Name:
+Terraform Portfolio
+
+Project Slug:
+terraform-portfolio
+
+Environment:
+production
+
+Environment (Uppercase):
+PRODUCTION
+
+Environment Length:
+10
+
+Available Environments:
+development, staging, production
+
+Formatted Title:
+Terraform Portfolio - PRODUCTION Environment
+
+Production Environment Available:
+true
