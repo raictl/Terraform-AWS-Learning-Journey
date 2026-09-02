@@ -1,0 +1,4 @@
+Server Name: DevOps-Server-01
+Environment: Development
+Operating System: Linux
+
